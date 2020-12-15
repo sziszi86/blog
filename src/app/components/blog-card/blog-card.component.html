@@ -1,0 +1,34 @@
+<ng-template #emptyblog>
+  <div class="spinner-container text-center">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+<ng-container *ngIf="blogPost && blogPost.length>0; else emptyblog">
+  <div class="{{ post.featured }}" *ngFor="let post of blogPost | paginate: config">
+    <mat-card class="blog-card mat-elevation-z2">
+      <mat-card-content>
+        <a [routerLink]="['/blog/', post.postId, post.title | slug]">
+          <div class="home-img pb-3">
+            <img [src]="post.imgPost" alt="" />
+          </div>
+        </a>
+        <a class="blog-title pt-3" [routerLink]="['/blog/', post.postId, post.title | slug]">
+          <h2>{{ post.title}} </h2>
+        </a>
+        <div [innerHTML]="post.content | excerpt"></div>
+      </mat-card-content>
+      <mat-divider></mat-divider>
+      <mat-card-actions align="end">
+        <ng-container *ngIf="appUser?.isAdmin">
+          <button mat-raised-button color="accent" [routerLink]="['/editpost',post.postId]">Szerkeszt</button>
+          <button mat-raised-button color="warn" (click)="delete(post.postId)">Törlés</button>
+        </ng-container>
+        <span class="spacer"></span>
+        <button mat-raised-button color="primary"
+          [routerLink]="['/blog/', post.postId, post.title | slug]">Bővebben...</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <mat-divider></mat-divider>
+  <app-paginator [pageSizeOptions]="pageSizeOptions" [config]="config"></app-paginator>
+</ng-container>
