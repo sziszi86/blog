@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Post } from '../models/Post';
+import { Post } from '../models/post';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -22,9 +22,9 @@ export class BlogService {
         return actions.map(
           c => ({
             postId: c.payload.doc.id,
-            ...c.payload.doc.data()
-          }));
+            ... c.payload.doc.data() as {}
       }));
+          }));
     return blogs;
   }
 
