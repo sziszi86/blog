@@ -1,25 +1,27 @@
-<div class="row">
-    <div class="left-panel col-md-10">
-        <div class="container-fluid">
-            <app-blog-card class="row"></app-blog-card>
-        </div>
+<div class="row pt-4 wrap">
+  <div class="left-panel col-md-10">
+    <div class="w-100">
+      <app-blog-card class="row"></app-blog-card>
     </div>
-    <div  class="right-panel col-md-2 pt-3">
-        <mat-card class="w-100">
-            <mat-card-header>
-              <mat-card-title>{{currentDate | date:'yyyy-MM-dd'}}</mat-card-title>
-              <mat-card-subtitle class="namedays">{{nameday}}</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-              <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
-              </p>
-            </mat-card-content>
+  </div>
+  <div class="right-panel w-100 col-md-2 pt-3">
+    <mat-card class="w-100">
+      <mat-card-header>
+        <mat-card-title>{{currentDate | date:'yyyy-MM-dd'}}</mat-card-title>
+        <mat-card-subtitle class="namedays">{{nameday}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <angular-weather-widget [APIKEY]="'7fc7fba11ab9a265c726ab9a4e309942'" [width]="'175px'" [height]="'auto'"
+          [backgroundColor]="'#222'" [isBoxShadow]="true" [borderRadius]="'6px'" [locationFontSize]="'17px'"
+          [locationFontColor]="'#fff'" [status]="false" [statusFontColor]="'#fff'" [statusFontSize]="'14px'"
+          [temperature]="true" [tempratureFontColor]="'#fff'" [tempratureFontSize]="'16px'" [weatherImages]="true"
+          [weatherImageWidth]="'50px'" [weatherImageHeight]="'50px'" [geoLocation]="true" [location]="'budapest'"
+          [isWind]="false" [windFontColor]="'#fff'" [windFontSize]="'17px'" [humidityFontColor]="'#fff'"
+          [humidityFontSize]="'0px'"></angular-weather-widget>
+      </mat-card-content>
 
-          </mat-card>
-          
+    </mat-card>
 
-    </div>
+
+  </div>
 </div>

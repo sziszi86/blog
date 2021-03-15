@@ -9,6 +9,7 @@ const nevnapok = new Client();
   providers: [DatePipe]
 })
 export class HomeComponent implements OnInit {
+  
   currentDate = new Date();
   nameday : any;
   constructor() { 

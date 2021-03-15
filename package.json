@@ -26,6 +26,7 @@
     "@ckeditor/ckeditor5-angular": "^1.1.0",
     "@ckeditor/ckeditor5-build-classic": "^12.4.0",
     "@ckeditor/ckeditor5-upload": "^22.0.0",
+    "angular2-weather-widget": "^1.0.1",
     "bootstrap": "^4.3.1",
     "cors": "^2.8.5",
     "firebase": "^6.6.2",

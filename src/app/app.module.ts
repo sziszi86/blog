@@ -13,6 +13,7 @@ import { FormsModule } from "@angular/forms";
 import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
 import { NgxPaginationModule } from "ngx-pagination";
 import { HttpClientModule } from "@angular/common/http";
+import { AngularWeatherWidgetModule } from 'angular2-weather-widget';
 
 import { AppComponent } from "./app.component";
 import { environment } from "src/environments/environment";
@@ -43,6 +44,7 @@ import { CommentsComponent } from './components/comments/comments.component';
   ],
   imports: [
     NgxPaginationModule,
+    AngularWeatherWidgetModule,
     AngularFireAuthModule,
     BrowserModule,
     CKEditorModule,
