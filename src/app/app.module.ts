@@ -13,6 +13,7 @@ import { FormsModule } from "@angular/forms";
 import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
 import { NgxPaginationModule } from "ngx-pagination";
 import { HttpClientModule } from "@angular/common/http";
+import { AngularWeatherWidgetModule } from 'angular2-weather-widget';
 
 import { AppComponent } from "./app.component";
 import { environment } from "src/environments/environment";
@@ -27,6 +28,7 @@ import { PaginatorComponent } from "./components/paginator/paginator.component";
 import { AuthGuard } from "./guards/auth.guard";
 import { AngularFireStorage } from "@angular/fire/storage";
 import { CommentsComponent } from './components/comments/comments.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { CommentsComponent } from './components/comments/comments.component';
   ],
   imports: [
     NgxPaginationModule,
+    AngularWeatherWidgetModule,
     AngularFireAuthModule,
     BrowserModule,
     CKEditorModule,
@@ -68,6 +71,7 @@ import { CommentsComponent } from './components/comments/comments.component';
       { path: "blog/:id/:slug", component: BlogComponent },
       { path: "**", component: HomeComponent },
     ]),
+    AppRoutingModule,
   ],
   providers: [AngularFirestore, AngularFireStorage],
   bootstrap: [AppComponent],
